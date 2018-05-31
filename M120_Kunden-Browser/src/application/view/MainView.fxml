@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.MainViewController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Datei">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Bearbeiten">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Hilfe">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#aboutMenuPressed" text="About" />
+            </items>
+          </Menu>
+        </menus>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </MenuBar>
+   </top>
+   <bottom>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+            <ButtonBar buttonMinWidth="104.0" layoutX="321.0" layoutY="3.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0">
+              <buttons>
+                <Button mnemonicParsing="false" onAction="#insertButtonPressed" text="Neu..." />
+                  <Button fx:id="btnEdit" disable="true" mnemonicParsing="false" onAction="#editButonPressed" text="Bearbeiten..." />
+                  <Button fx:id="btnDelete" disable="true" mnemonicParsing="false" onAction="#deleteButtonPressed" text="Löschen" />
+              </buttons>
+            </ButtonBar>
+         </children>
+      </AnchorPane>
+   </bottom>
+   <left>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tblKunde" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="colVorname" prefWidth="100.0" text="Vorname" />
+                <TableColumn fx:id="colNachname" prefWidth="100.0" text="Nachname" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+            <GridPane prefWidth="380.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Vorname" />
+                  <Label text="Nachname" GridPane.rowIndex="1" />
+                  <Label text="Strasse" GridPane.rowIndex="2" />
+                  <Label text="PLZ / Ort" GridPane.rowIndex="3" />
+                  <Label text="Email" GridPane.rowIndex="4" />
+                  <Label text="Kunde seit" GridPane.rowIndex="5" />
+                  <Label text="Status" GridPane.rowIndex="6" />
+                  <Label text="Newsletter abonniert" GridPane.rowIndex="7" />
+                  <Label fx:id="lblVorname" GridPane.columnIndex="1" />
+                  <Label fx:id="lblNachname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="lblStrasse" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="lblPlzOrt" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label fx:id="lblEmail" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label fx:id="lblKundeSeit" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label fx:id="lblStatus" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label fx:id="lblNewsletter" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
